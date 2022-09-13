@@ -30,26 +30,30 @@
             <p id="date">Date</p>
        </div>
         
-        <div class="card-body">
+        <div class="card-body d-flex flex-column">
             <div class="add-item d-flex align-center justify-content-left">
-                <i class="fa-solid fa-circle-plus"></i>
+                <i id="Add-todo" class="fa-solid fa-circle-plus"></i>
                 <input type="text" id="input" class="input-box" placeholder="Add to do">
-
+           
             </div>
+            <div class="feed">
+                <p class="feedback text-danger m-1"></p>
+            </div>
+            
           
          
         </div>
-        <div class="list-group list-group-flush">
-          <div class="list-group-item ">  
-            <i id="circle" class="fa-regular fa-circle"></i>
-            <p class="text"> To do</p>
-            <i id="trash" class="fa-solid fa-trash-can"></i>
+        <ul id="list" class="list-group list-group-flush">
+          <!-- <li class="list-group-item ">  
+            <i id="circle" class="fa-regular fa-circle" job="complete"></i>
+            <p class="text"> ${input.value}</p>
+            <i id="trush" class="fa-solid fa-trash-can" job="delete"></i>
         
         
-        </div>
+        </li> -->
           
           
-        </div>
+        </ul>
         <div class="card-foot d-flex justify-content-end">
             
           

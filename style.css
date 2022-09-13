@@ -87,3 +87,9 @@ body {
 .list-group-item i:hover {
   color: black;
 }
+
+/* ----------event-------------  */
+
+.feedback {
+  display: none;
+}
