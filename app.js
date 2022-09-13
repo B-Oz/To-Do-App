@@ -76,16 +76,35 @@ const createToDo = () => {
     input.value = " ";
 
     myCircle.addEventListener("click", () => {
-      // ! UZUN VERSİYON
-      myCircle.setAttribute("class", "fa-solid fa-circle-check");
+      // ! KIsa VERSİYON
       myP.classList.toggle("checked");
-      myCircle.classList.toggle("done");
-
+      // myCircle.classList.toggle("done");
+      // ! Check Control
+      if (myP.classList.contains("checked")) {
+        myCircle.classList.remove("fa-circle");
+        myCircle.classList.add("fa-circle-check");
+        myCircle.classList.add("done");
+      } else {
+        myCircle.classList.remove("fa-circle-check");
+        myCircle.classList.add("fa-circle");
+        myCircle.classList.remove("done");
+      }
       // !UZUN VERSİYON
       // e.target.parentElement.lastElementChild.previousElementSibling.classList.toggle(
       //   "checked"
       // );
     });
+    // myCircle.addEventListener("click", () => {
+
+    //   myCircle.setAttribute("class", "fa-solid fa-circle-check");
+    //   myP.classList.toggle("checked");
+    //   myCircle.classList.toggle("done");
+
+    //   myCircle.addEventListener("click", () => {
+    //     myCircle.setAttribute("class", "fa-regular fa-circle");
+    //     myP.setAttribute("class", "text");
+
+    //   });
 
     myTrash.addEventListener("click", (e) => {
       e.target.parentElement.remove();
