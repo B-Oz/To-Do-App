@@ -56,38 +56,47 @@ const createToDo = () => {
   const myLi = document.createElement("li");
   myLi.setAttribute("class", "list-group-item");
 
-  const myCircle = document.createElement("i");
-  myCircle.setAttribute("class", "fa-regular fa-circle");
-  myLi.appendChild(myCircle);
+  if (!input.value || input.value <= 0) {
+    setTimeout(feedBack, 500);
+    setTimeout(StopFeedback, 2000);
+  } else {
+    const myCircle = document.createElement("i");
+    myCircle.setAttribute("class", "fa-regular fa-circle");
+    myLi.appendChild(myCircle);
 
-  const myP = document.createElement("p");
-  myP.setAttribute("class", "text");
-  myP.innerHTML = input.value;
-  myLi.appendChild(myP);
+    const myP = document.createElement("p");
+    myP.setAttribute("class", "text");
+    myP.innerHTML = input.value;
+    myLi.appendChild(myP);
 
-  const myTrash = document.createElement("i");
-  myTrash.setAttribute("class", "fa-solid fa-trash-can");
-  myLi.appendChild(myTrash);
-  list.insertBefore(myLi, list.children[0]); //? yeni itemları listenin ilk elemanına ekler
-  input.value = " ";
+    const myTrash = document.createElement("i");
+    myTrash.setAttribute("class", "fa-solid fa-trash-can");
+    myLi.appendChild(myTrash);
+    list.insertBefore(myLi, list.children[0]); //? yeni itemları listenin ilk elemanına ekler
+    input.value = " ";
+
+    myCircle.addEventListener("click", () => {
+      // ! UZUN VERSİYON
+      myCircle.setAttribute("class", "fa-solid fa-circle-check");
+      myP.classList.toggle("checked");
+      myCircle.classList.toggle("done");
+
+      // !UZUN VERSİYON
+      // e.target.parentElement.lastElementChild.previousElementSibling.classList.toggle(
+      //   "checked"
+      // );
+    });
+
+    myTrash.addEventListener("click", (e) => {
+      e.target.parentElement.remove();
+    });
+  }
 };
 
 //? ------Add event handler-------
 
-Add.addEventListener("click", () => {
-  if (!input.value) {
-    setTimeout(feedBack, 500);
-    setTimeout(StopFeedback, 2000);
-  } else {
-    createToDo();
-    // myLi.innerHTML = `<i id="circle" class="fa-regular fa-circle" job="complete"></i>
-    //          <p class="text"> ${input.value}</p>
-    //          <i id="trash" class="fa-solid fa-trash-can" job="delete"></i>`;
-
-    // list.appendChild(myLi); //? yeni itemları aşağı doğru ekler
-  }
-  input.focus();
-});
+Add.addEventListener("click", createToDo);
+input.focus();
 
 //?-----ENTER click-----
 input.addEventListener("keydown", (event) => {
@@ -100,7 +109,3 @@ input.addEventListener("keydown", (event) => {
 clear.addEventListener("click", () => {
   list.innerHTML = " ";
 });
-
-//?----------CHECK click----------
-
-//?---------DELETE Click-----------

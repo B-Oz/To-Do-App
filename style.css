@@ -94,11 +94,10 @@ body {
   display: none;
 }
 
-.done {
+.checked {
   text-decoration: line-through;
 }
-
-#trash {
+.done {
   color: rgb(154, 241, 25);
   font-size: 1.5rem;
 }
