@@ -98,6 +98,6 @@ body {
   text-decoration: line-through;
 }
 .done {
-  color: rgb(154, 241, 25);
+  color: rgb(132, 189, 46) !important;
   font-size: 1.5rem;
 }
