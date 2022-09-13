@@ -1,5 +1,33 @@
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: antiquewhite;
+}
+.card {
+  box-shadow: rgba(236, 123, 36, 0.534) 0px 22px 70px 4px;
+  border-radius: 2rem;
+}
+.card-body {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.card-img-top {
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
 .img-cover {
   position: relative;
+}
+.img-cover i {
+  font-size: 2rem;
+  position: absolute;
+  color: rgb(222, 236, 101);
+  left: 430px;
+  top: 10px;
+}
+.img-cover i:hover {
+  cursor: pointer;
+  transform: rotate(90deg);
 }
 
 #date {
@@ -7,7 +35,55 @@
   position: absolute;
   color: wheat;
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 600;
+  font-style: italic;
   left: 30px;
   bottom: -10px;
+}
+
+.add-item i {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  color: rgb(184, 76, 37);
+}
+.add-item i:hover {
+  color: rgb(185, 146, 68);
+  cursor: pointer;
+}
+
+.input-box {
+  vertical-align: middle;
+  width: 90%;
+  border: none;
+  font-size: 1.2rem;
+  outline: none;
+}
+.list-group {
+  height: 40vh;
+}
+.list-group-item {
+  color: rgba(67, 44, 44, 0.788);
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  vertical-align: middle;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.list-group-item p {
+  width: 85%;
+  margin-top: 0.9rem;
+  vertical-align: middle !important;
+}
+
+.list-group-item i {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: rgba(67, 44, 44, 0.788);
+}
+
+.list-group-item i:hover {
+  color: black;
 }
