@@ -93,3 +93,12 @@ body {
 .feedback {
   display: none;
 }
+
+.done {
+  text-decoration: line-through;
+}
+
+#trash {
+  color: rgb(154, 241, 25);
+  font-size: 1.5rem;
+}
