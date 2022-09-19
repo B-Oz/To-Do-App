@@ -128,3 +128,8 @@ input.addEventListener("keydown", (event) => {
 clear.addEventListener("click", () => {
   list.innerHTML = " ";
 });
+
+//?focus-----
+window.onload = function () {
+  input.focus();
+};
