@@ -133,3 +133,5 @@ clear.addEventListener("click", () => {
 window.onload = function () {
   input.focus();
 };
+
+// edit button..
