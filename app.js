@@ -134,4 +134,6 @@ window.onload = function () {
   input.focus();
 };
 
-// edit button..
+//? edit button..
+
+//? hergüne ayrı resim
