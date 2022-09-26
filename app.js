@@ -159,3 +159,24 @@ window.onload = function () {
 //? edit button..
 
 //? hergüne ayrı resim
+
+const changeImage = () => {
+  const image = document.getElementById("flowers");
+
+  if ((gün = "Monday")) {
+    image.src = "./img/pazartesi.jpg";
+  } else if ((gün = "Tuesday")) {
+    image.src = "./img/salı.jpg";
+  } else if ((gün = "Wednesday")) {
+    image.src = "./img/çarşamba.jpg";
+  } else if ((gün = "Thursday")) {
+    image.src = "./img/perşembe.jpg";
+  } else if ((gün = "Friday")) {
+    image.src = "./img/cuma.jpg";
+  } else if ((gün = "Saturday")) {
+    image.src = "./img/cumartesi.jpg";
+  } else if ((gün = "Sunday")) {
+    image.src = "./img/pazar.jpg";
+  }
+};
+changeImage();
