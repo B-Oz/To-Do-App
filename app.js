@@ -43,19 +43,6 @@ const feedback = document.querySelector(".feedback");
 // const trash = document.getElementById("trash");
 const item = document.querySelector(".list-group-item");
 
-//?local storage
-
-const startConf = () => {
-  const todos = JSON.parse(localStorage.getItem("todos"));
-  if (!todos) {
-    localStorage.setItem("todos", JSON.stringify([]));
-  } else {
-    // todos.forEach((todo) => {
-    //   createToDo(todo);
-    // });
-  }
-};
-
 const feedBack = () => {
   feedback.style.display = "inline";
   feedback.innerHTML = "Please Enter To Do Item";
@@ -125,15 +112,9 @@ const createToDo = () => {
     myTrash.addEventListener("click", (e) => {
       e.target.parentElement.remove();
     });
-
-    const todos = JSON.parse(localStorage.getItem("todos"));
-    todos.push(myP.innerText);
-    localStorage.setItem("todos", JSON.stringify(todos));
-
-    createToDo();
   }
 };
-startConf();
+
 //? ------Add event handler-------
 
 Add.addEventListener("click", createToDo);
@@ -162,21 +143,30 @@ window.onload = function () {
 
 const changeImage = () => {
   const image = document.getElementById("flowers");
+  const body = document.body;
+  console.log(gün);
 
   if ((gün = "Monday")) {
     image.src = "./img/pazartesi.jpg";
+    body.style.background = "#FBDFE4";
   } else if ((gün = "Tuesday")) {
     image.src = "./img/salı.jpg";
+    body.style.background = "#AAD8FD";
   } else if ((gün = "Wednesday")) {
     image.src = "./img/çarşamba.jpg";
+    body.style.background = "lavender";
   } else if ((gün = "Thursday")) {
     image.src = "./img/perşembe.jpg";
+    body.style.background = "#FEF8F9";
   } else if ((gün = "Friday")) {
     image.src = "./img/cuma.jpg";
+    body.style.background = "#B5E8F9";
   } else if ((gün = "Saturday")) {
     image.src = "./img/cumartesi.jpg";
-  } else if ((gün = "Sunday")) {
+    body.style.background = "#F9C6A2";
+  } else {
     image.src = "./img/pazar.jpg";
+    body.style.background = "wheat";
   }
 };
 changeImage();

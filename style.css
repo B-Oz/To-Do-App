@@ -1,9 +1,9 @@
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
-  background-color: antiquewhite;
+  background-color: wheat;
 }
 .card {
-  box-shadow: rgba(236, 123, 36, 0.534) 0px 22px 70px 4px;
+  box-shadow: rgba(246, 205, 174, 0.534) 0px 22px 70px 4px;
   border-radius: 2rem;
 }
 .card-body {
