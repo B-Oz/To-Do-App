@@ -137,5 +137,3 @@ window.onload = function () {
 //? edit button..
 
 //? hergüne ayrı resim
-
-//?refresh butonunu animasyon yap

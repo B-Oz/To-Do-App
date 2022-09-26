@@ -25,10 +25,6 @@ body {
   left: 430px;
   top: 10px;
 }
-.img-cover i:hover {
-  cursor: pointer;
-  transform: rotate(90deg);
-}
 
 #date {
   z-index: 100;
@@ -100,4 +96,32 @@ body {
 .done {
   color: rgb(132, 189, 46) !important;
   font-size: 1.5rem;
+}
+
+/*refresh button animation*/
+
+.img-cover i:hover {
+  /* cursor: pointer;
+  transform: rotate(90deg); */
+  animation: travel 0.5s infinite;
+  animation-fill-mode: forwards;
+  cursor: pointer;
+}
+
+@keyframes travel {
+  0% {
+    transform: rotate(0);
+  }
+
+  33% {
+    transform: rotate(120deg);
+  }
+
+  66% {
+    transform: rotate(240deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
