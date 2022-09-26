@@ -43,6 +43,19 @@ const feedback = document.querySelector(".feedback");
 // const trash = document.getElementById("trash");
 const item = document.querySelector(".list-group-item");
 
+//?local storage
+
+const startConf = () => {
+  const todos = JSON.parse(localStorage.getItem("todos"));
+  if (!todos) {
+    localStorage.setItem("todos", JSON.stringify([]));
+  } else {
+    // todos.forEach((todo) => {
+    //   createToDo(todo);
+    // });
+  }
+};
+
 const feedBack = () => {
   feedback.style.display = "inline";
   feedback.innerHTML = "Please Enter To Do Item";
@@ -66,7 +79,7 @@ const createToDo = () => {
 
     const myP = document.createElement("p");
     myP.setAttribute("class", "text");
-    myP.innerHTML = input.value;
+    myP.innerText = input.value;
     myLi.appendChild(myP);
 
     const myTrash = document.createElement("i");
@@ -105,13 +118,22 @@ const createToDo = () => {
     //     myP.setAttribute("class", "text");
 
     //   });
+    // myP.addEventListener("dbclick", () => {
+    //   input.value = myP.innerText;
+    // });
 
     myTrash.addEventListener("click", (e) => {
       e.target.parentElement.remove();
     });
+
+    const todos = JSON.parse(localStorage.getItem("todos"));
+    todos.push(myP.innerText);
+    localStorage.setItem("todos", JSON.stringify(todos));
+
+    createToDo();
   }
 };
-
+startConf();
 //? ------Add event handler-------
 
 Add.addEventListener("click", createToDo);
