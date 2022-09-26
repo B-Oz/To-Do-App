@@ -27,6 +27,7 @@ let günler = [
   "Saturday",
 ];
 let gün = günler[date.getDay()];
+console.log(date.getDay());
 
 let fullDate = gün + "," + month + " " + day;
 // console.log(fullDate);
@@ -39,8 +40,6 @@ const list = document.getElementById("list");
 const input = document.getElementById("input");
 const Add = document.getElementById("Add-todo");
 const feedback = document.querySelector(".feedback");
-// const circle = document.getElementById("circle");
-// const trash = document.getElementById("trash");
 const item = document.querySelector(".list-group-item");
 
 const feedBack = () => {
@@ -76,7 +75,6 @@ const createToDo = () => {
     input.value = " ";
 
     myCircle.addEventListener("click", () => {
-      // ! KIsa VERSİYON
       myP.classList.toggle("checked");
       // myCircle.classList.toggle("done");
       // ! Check Control
@@ -89,25 +87,7 @@ const createToDo = () => {
         myCircle.classList.add("fa-circle");
         myCircle.classList.remove("done");
       }
-      // !UZUN VERSİYON
-      // e.target.parentElement.lastElementChild.previousElementSibling.classList.toggle(
-      //   "checked"
-      // );
     });
-    // myCircle.addEventListener("click", () => {
-
-    //   myCircle.setAttribute("class", "fa-solid fa-circle-check");
-    //   myP.classList.toggle("checked");
-    //   myCircle.classList.toggle("done");
-
-    //   myCircle.addEventListener("click", () => {
-    //     myCircle.setAttribute("class", "fa-regular fa-circle");
-    //     myP.setAttribute("class", "text");
-
-    //   });
-    // myP.addEventListener("dbclick", () => {
-    //   input.value = myP.innerText;
-    // });
 
     myTrash.addEventListener("click", (e) => {
       e.target.parentElement.remove();
@@ -139,29 +119,29 @@ window.onload = function () {
 
 //? edit button..
 
-//? hergüne ayrı resim
+//? Changing image for days
 
 const changeImage = () => {
   const image = document.getElementById("flowers");
   const body = document.body;
   console.log(gün);
 
-  if ((gün = "Monday")) {
+  if (gün == "Monday") {
     image.src = "./img/pazartesi.jpg";
     body.style.background = "#FBDFE4";
-  } else if ((gün = "Tuesday")) {
+  } else if (gün == "Tuesday") {
     image.src = "./img/salı.jpg";
     body.style.background = "#AAD8FD";
-  } else if ((gün = "Wednesday")) {
+  } else if (gün == "Wednesday") {
     image.src = "./img/çarşamba.jpg";
     body.style.background = "lavender";
-  } else if ((gün = "Thursday")) {
+  } else if (gün == "Thursday") {
     image.src = "./img/perşembe.jpg";
     body.style.background = "#FEF8F9";
-  } else if ((gün = "Friday")) {
+  } else if (gün == "Friday") {
     image.src = "./img/cuma.jpg";
     body.style.background = "#B5E8F9";
-  } else if ((gün = "Saturday")) {
+  } else if (gün == "Saturday") {
     image.src = "./img/cumartesi.jpg";
     body.style.background = "#F9C6A2";
   } else {
@@ -169,4 +149,5 @@ const changeImage = () => {
     body.style.background = "wheat";
   }
 };
+
 changeImage();
