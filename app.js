@@ -27,12 +27,45 @@ let günler = [
   "Saturday",
 ];
 let gün = günler[date.getDay()];
-console.log(date.getDay());
+// console.log(date.getDay());
 
 let fullDate = gün + "," + month + " " + day;
 // console.log(fullDate);
 
 document.getElementById("date").innerText = fullDate;
+
+//? Changing image for days
+
+const changeImage = () => {
+  const image = document.getElementById("flowers");
+  const body = document.body;
+  // console.log(gün);
+
+  if (gün == "Monday") {
+    image.src = "./img/pazartesi.jpg";
+    body.style.background = "#FBDFE4";
+  } else if (gün == "Tuesday") {
+    image.src = "./img/salı.jpg";
+    body.style.background = "#AAD8FD";
+  } else if (gün == "Wednesday") {
+    image.src = "./img/çarşamba.jpg";
+    body.style.background = "lavender";
+  } else if (gün == "Thursday") {
+    image.src = "./img/perşembe.jpg";
+    body.style.background = "#FEF8F9";
+  } else if (gün == "Friday") {
+    image.src = "./img/cuma.jpg";
+    body.style.background = "#B5E8F9";
+  } else if (gün == "Saturday") {
+    image.src = "./img/cumartesi.jpg";
+    body.style.background = "#F9C6A2";
+  } else {
+    image.src = "./img/pazar.jpg";
+    body.style.background = "wheat";
+  }
+};
+
+changeImage();
 
 //? ----------SELECT ELEMENTS-----------
 const clear = document.getElementById("refresh");
@@ -116,38 +149,3 @@ clear.addEventListener("click", () => {
 window.onload = function () {
   input.focus();
 };
-
-//? edit button..
-
-//? Changing image for days
-
-const changeImage = () => {
-  const image = document.getElementById("flowers");
-  const body = document.body;
-  console.log(gün);
-
-  if (gün == "Monday") {
-    image.src = "./img/pazartesi.jpg";
-    body.style.background = "#FBDFE4";
-  } else if (gün == "Tuesday") {
-    image.src = "./img/salı.jpg";
-    body.style.background = "#AAD8FD";
-  } else if (gün == "Wednesday") {
-    image.src = "./img/çarşamba.jpg";
-    body.style.background = "lavender";
-  } else if (gün == "Thursday") {
-    image.src = "./img/perşembe.jpg";
-    body.style.background = "#FEF8F9";
-  } else if (gün == "Friday") {
-    image.src = "./img/cuma.jpg";
-    body.style.background = "#B5E8F9";
-  } else if (gün == "Saturday") {
-    image.src = "./img/cumartesi.jpg";
-    body.style.background = "#F9C6A2";
-  } else {
-    image.src = "./img/pazar.jpg";
-    body.style.background = "wheat";
-  }
-};
-
-changeImage();

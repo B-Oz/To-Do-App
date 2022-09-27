@@ -101,9 +101,6 @@ body {
 /*refresh button animation*/
 
 .img-cover i:hover {
-  /* cursor: pointer;
-  transform: rotate(90deg); */
-
   animation: travel 0.5s linear infinite;
   animation-fill-mode: forwards;
   cursor: pointer;
